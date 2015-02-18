@@ -4,15 +4,31 @@
 <head>
 	<title>hoppfull</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<link rel="stylesheet" type="text/css" href="xss.css" />
+	<link rel="stylesheet" type="text/css" href="home_xss.css" />
 	<style type="text/css"></style>
+	<script type="text/javascript" src="home_script.js"></script>
+	<script type="text/javascript" src="ajax_script.js"></script>
 </head>
-<body>
-	Hello world wide internet!
+<body onload='home_openclose();' style="
+	background-color: black;
+	font-family: arial;
+	color: white;">
+	
 	<script type="text/javascript">
 		if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-			document.write("whaddup!"); //OMG it works!
+			//Run this code if viewed on listed devices above.
 		}
 	</script>
+	
+	<div id="bar_home">
+		<div onclick='home_openclose();' id="button_home">
+			<img src="arrow-left.png" id="icon_arrow_left" class="icon_arrow"/>
+			<img src="arrow-right.png" id="icon_arrow_right" class="icon_arrow"/>
+		</div>
+	</div>
+	<div id="page_home">
+	</div>
+	
+	
 </body>
 </html>
