@@ -1,0 +1,19 @@
+.content_HOME_textfield {
+	position:absolute;
+	color:black;
+}
+
+#content_HOME_textfield1 {
+	left:20px; right:20px; top:10px;
+}
+
+#content_HOME_body {
+	opacity:0;
+	background-color:#f0f0f0;
+	position:absolute;
+	width:100%; height:0%;
+	overflow-y:hidden;
+	border:black 1px solid;
+	border-radius:3px;
+	box-shadow:0px 0px 0px #000000 inset, 0px 0px 10px #000000;
+}
