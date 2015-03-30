@@ -3,64 +3,8 @@
 <html>
 <head>
 	<title>hoppfull</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	
-	<link rel="stylesheet" type="text/css" href="./pages/HOME/xss_HOME.css"/>
-	<link rel="stylesheet" type="text/css" href="./pages/WEBGL/xss_WEBGL.css"/>
-	<link rel="stylesheet" type="text/css" href="./pages/ABOUT/xss_ABOUT.css"/>
-	<link rel="stylesheet" type="text/css" href="xss_MAIN.css"/>
-	<!-- Order in which these scripts are imported matters: -->
-	<script type="text/javascript" src="AJAX.js"></script>
-	<script type="text/javascript" src="./pages/HOME/script_HOME.js"></script>
-	<script type="text/javascript" src="./pages/WEBGL/script_WEBGL.js"></script>
-	<script type="text/javascript" src="./pages/ABOUT/script_ABOUT.js"></script>
-	<script type="text/javascript" src="script_MAIN.js"></script>
 </head>
-<body onload='page.HOME.open();'>
-	<div class="layout" id="layout_content">
-		<!-- These are important as targets for AJAX: -->
-		<div class="content_area" id="content_HOME"></div>
-		<div class="content_area" id="content_WEBGL"></div>
-		<div class="content_area" id="content_ABOUT"></div>
-	</div>
-	<div class="layout" id="layout_footer">
-		email: hoppfull@gmail.com
-	</div>
-	<div class="layout" id="layout_header">
-		<div style="
-			opacity:0.6;
-			background-color:black;
-			position:absolute;
-			top:0px; left:0px; right:0px; bottom:30px;">
-		</div>
-		<div style="
-			opacity:0.1;
-			background-color:white;
-			position:absolute;
-			bottom:0px; left:0px; right:0px;
-			height:30px;">
-		</div>
-		<table id="header_button_table">
-		<tr><!-- Simply add more table data for extra buttons: -->
-			<td><div class="header_button" id="header_button_HOME"
-				onclick='page.HOME.open();'
-				onmouseover='button_onmouseover("header_button_HOME")'
-				onmouseout='button_onmouseout("header_button_HOME")'>
-				<img src="./icons/icon_HOME.png"/></div></td>
-				
-			<td><div class="header_button" id="header_button_WEBGL"
-				onclick='page.WEBGL.open();'
-				onmouseover='button_onmouseover("header_button_WEBGL")'
-				onmouseout='button_onmouseout("header_button_WEBGL")'>
-				<img src="./icons/icon_WEBGL.png"/></div></td>
-				
-			<td><div class="header_button" id="header_button_ABOUT"
-				onclick='page.ABOUT.open();'
-				onmouseover='button_onmouseover("header_button_ABOUT")'
-				onmouseout='button_onmouseout("header_button_ABOUT")'>
-				<img src="./icons/icon_ABOUT.png"/></div></td>
-		</tr>
-		</table>
-	</div>
+<body>
+	Hello worldzzch!
 </body>
 </html>
