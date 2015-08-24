@@ -1,0 +1,25 @@
+<div>
+  <div class="page_fsharp_header">ex06 - Closure</div>
+  
+  Since functions are <i>First-Class</i> and can return other functions
+  we can use objects in its closure; objects in the local scope of the
+  function definition.
+  
+  <pre><code class="fsharp code"
+>// getfunc returns a function that remembers the value of i
+let getfunc i =
+  (fun x -> x + i)
+
+let f1 = getfunc 5
+let f2 x = x + 5
+// f1 and f2 are equivalent</code></pre>
+  
+  Functions can be defined as other functions with some parameters hard
+  wired. This is called <i>Partial Application</i>:
+  <pre><code class="fsharp code"
+>let f x y = x - y
+
+let g x = f x 42
+// g is equivalent to (fun x -> x - 42)</code></pre>
+  
+</div>

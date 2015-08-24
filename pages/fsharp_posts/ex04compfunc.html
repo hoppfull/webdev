@@ -1,0 +1,18 @@
+<div>
+  <div class="page_fsharp_header">ex04 - Composing Functions</div>
+  
+  Functions can be composed to produce new functions:
+  <pre><code class="fsharp code"
+>let f =  // f is composed of:
+     (fun x -> x * 2)  // whose output is fed to next function:
+  >> (fun x -> x - 2)  // whose output is fed to next function:
+  >> (fun x -> x + 100)
+
+(* can be read as:
+  first double x then
+  subtract 2 then
+  add 100
+*)
+let result = f 10  // result = 10 * 2 - 2 + 100 = 118</code></pre>
+  
+</div>

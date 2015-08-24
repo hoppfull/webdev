@@ -1,0 +1,52 @@
+<div>
+  <div class="page_fsharp_header">Import external file (F#)</div>
+  
+  Sometimes we want to organize our code by putting related code in different files.
+  <br/><br/>
+  
+  A safety feature of F# is that files can only inherit from each other in a one way
+  order. That means file A cannot inherit from file B if B inherits from A. The way
+  this is implemented is through the order in which we compile the files. Parents
+  first followed by their children.
+  <br/><br/>
+  
+  We got two kinds of external files to inherit; namespaces and modules. Modules can
+  contain defined values while namespaces can only contain functions (There's
+  probably more to it).
+  <br/><br/>
+  
+  Create a parent file called <i>mymodule.fs</i> and define it as a module named
+  <i>whatever</i> then define a value:
+  <pre><code class="fsharp code"
+>module whatever
+
+let x = "hello my friends!"</code></pre>
+  
+  <br/>
+  
+  Now create a child file called <i>myprog.fs</i> and use data from the
+  <i>whatever</i> module:
+  
+  <pre><code class="fsharp code"
+>printfn "%s" whatever.x</code></pre>
+  
+  <br/>
+  
+  When compiling make sure to list all files in project and order them accordingly:
+  <div class="cmd_console code"
+>...\projectfolder\>fsc mymodule.fs myprog.fs
+Microsoft (R) F# Interactive version 12.0.21005.1
+Copyright (C) Microsoft Corporation. All Rights Reserved.
+
+..\projectfolder\>_</div>
+  
+  Run myprog.exe:
+  
+  <div class="cmd_console code"
+>...\projectfolder\>myprog
+hello my friends!
+
+...\projectfolder\>_</div>
+  
+  <script>$('pre code').each(function(i, block) {hljs.highlightBlock(block);});</script>
+</div>

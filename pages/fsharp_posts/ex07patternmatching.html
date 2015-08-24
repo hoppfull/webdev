@@ -1,0 +1,48 @@
+<div>
+  <div class="page_fsharp_header">ex07 - Pattern Matching</div>
+  
+  Pattern matching is a very powerful tool for your application to take
+  decisions. Basically it's about comparing objects. It is more than a
+  simple switch statement though. Here's a simple example:
+  
+  <pre><code class="fsharp code"
+>// Pattern matching function:
+let f x =
+  match x with
+  | 0 -> "zero"  // if x is 0, then f returns string "zero"
+  | 1 -> "one"  // if x is 1, then f returns string "zero"
+  | _ -> "dunno"  // if x is something else, f returns "dunno"
+
+printfn "%s" (f 0)  //cmd output:zero
+printfn "%s" (f 1)  //cmd output:one
+printfn "%s" (f 2)  //cmd output:dunno
+</code></pre>
+  
+  Shorthand to reduce verbosity:
+  <pre><code class="fsharp code"
+>let f = function
+  | 0 -> "zero"
+  | 1 -> "one"
+  | _ -> "dunno"
+
+printfn "%s" (f 1)  //cmd output:one
+</code></pre>
+  
+  Decision tree with logical predicates:
+  <pre><code class="fsharp code"
+>let f = function
+  | 0 -> "zero"
+  | 3 | 5 | 42 -> "one of my favorite numbers!"
+  | x when x > 1000 -> match x with
+                         | x when x % 2 = 0 -> "big even"
+                         | _ -> "big odd"
+  | _ -> "dunno"
+
+printfn "%s" (f 0)  //cmd output:zero
+printfn "%s" (f 5)  //cmd output:one of my favorite numbers!
+printfn "%s" (f 42)  //cmd output:one of my favorite numbers!
+printfn "%s" (f 2001)  //cmd output:big odd
+printfn "%s" (f 4)  //cmd output:dunno
+</code></pre>
+  
+</div>

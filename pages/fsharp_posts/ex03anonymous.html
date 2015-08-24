@@ -1,0 +1,26 @@
+<div>
+  <div class="page_fsharp_header">ex03 - Anonymous Functions</div>
+  
+  Sometimes we want a small function on the spot for some minor work,
+  and to avoid cluttering up our code, we define an anonymous function
+  in place; a function that is not associated with a name:
+  
+  <pre><code class="fsharp code"
+>// A function that takes a function as an argument and passes it the value 10:
+let F f = f 5
+
+// Pass an anonymous function to F:
+let result1 = F (fun x -> x * 3)  // result1 = 15
+let result2 = F (fun x -> x + 5)  // result2 = 20
+let result3 = F (fun x -> x * x)  // result3 = 25</code></pre>
+  
+  The following two code snippets are equivalent:
+  <pre><code class="fsharp code"
+>let f x y = x + y
+</code></pre>
+  
+  <pre><code class="fsharp code"
+>let f = (fun x y -> x + y)
+</code></pre>
+  
+</div>

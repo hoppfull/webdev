@@ -1,0 +1,56 @@
+<div>
+  <div class="page_fsharp_header">Simplifying compilation</div>
+  
+  Writing down the compilation commands in the console every time we want to compile
+  will be quite unmanageable for even small projects. To deal with this we create
+  batch scripts. Basically a batch script is a text file where we store console
+  commands so that we don't have to write them down manually.
+  <br/><br/>
+  
+  To create a batch script simply create a text file and name it something like
+  "<i>compile.bat</i>". To reduce clutter in the terminal when running I
+  start all scripts with:
+  <div class="batch_script code"
+>@ECHO OFF</div>
+  
+  <br/>
+  
+  We make calls in the command console with the <i>CALL</i> keyword. Example:
+  <div class="batch_script code"
+>CALL cd..</div>
+  This is the equivalent of:
+  <div class="cmd_console code"
+>C:\dir\>cd..
+
+C:\>_</div>
+  
+  <br/>
+  
+  For example: we have a source file we want to compile and then immediately run
+  the result.
+  
+  <br/><br/>
+  
+  <i>myprog.fs</i>:
+  <pre><code class="fsharp code"
+>printfn "hello batch scripting!!!11!one!"</code></pre>
+  <i>cmplandrun.bat</i>:
+  <div class="batch_script code"
+>@ECHO OFF
+
+CALL fsc myprog.fs
+
+CALL myprog.exe</div>
+  
+  Now we run the script:
+  <div class="cmd_console code"
+>projectfolder\>cmplandrun
+Microsoft (R) F# Compiler Version 12.0.12005.1
+Copyright (c) Microsoft Corporation. All Rights Reserved.
+hello batch scripting!!!11!one!
+
+projectfolder\>_</div>
+  
+  
+  <script>$('pre code').each(function(i, block) {hljs.highlightBlock(block);});</script>
+</div>

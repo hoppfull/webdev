@@ -1,0 +1,43 @@
+<div>
+  <div class="page_fsharp_header">ex02 - Variables</div>
+  
+  With variables we can associate a piece data with a name. In
+  functional programming we avoid changing the data of a variable
+  throughout execution. This means in fancy terms that we're avoiding
+  state change in our programs.
+  <br/><br/>
+  
+  To store a piece of data in a variable, use the <i>let</i> keyword:
+  <pre><code class="fsharp code"
+>//Store the integer value of 5 in a variable named x:
+let x = 5</code></pre>
+
+  This type of variable is immutable and cannot be changed. If we want
+  a variable that is mutable we define it explicitly:
+  <pre><code class="fsharp code"
+>//Store the integer value of 42 in a mutable variable named y:
+let mutable y = 42
+printfn "%i" y  //cmd console:42
+
+// Store a new value (ie. change state):
+y <- 99
+printfn "%i" y  //cmd console:99
+</code></pre>
+  
+  <br/>
+  
+  All variables are statically typed. Static Typing is a safety feature
+  which restricts variables and functions to only dealing with specific
+  types of values (such as integers, characters, floats).
+  <br/><br/>
+  
+  F# will not require you to always explicitly define the type of a
+  variable. F# will infer its type based on the value passed to it.
+  
+  <pre><code class="fsharp code"
+>let x = 3.14  // F# infers the type of x to be a float
+
+// Type is explicitly defined (unnecessarily in this case):
+let (y :int) = 42</code></pre>
+  
+</div>

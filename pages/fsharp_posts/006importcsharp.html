@@ -1,0 +1,63 @@
+<div>
+  <div class="page_fsharp_header">Import external file (C#)</div>
+  
+  Functional programming is great for most problems but sometimes you want to
+  optimize snippets of code an imperative language. C# is such a language included
+  with .Net and works great together with F#.
+  <br/><br/>
+  
+  First make sure
+  that you've got an environment variable to the C# compiler <i>csc.exe</i>. For me
+  this is located in "<i>C:\Windows\Microsoft.NET\Framework64\v4.0.30319</i>".
+  
+  <br/><br/>
+  
+  First we create a C# module and name it <i>MyModule.cs</i>:
+  
+  <pre><code class="csharp code"
+>namespace MyModule {
+  public class MyClass {
+    public static string x = "Whats up??!?";
+  }
+}</code></pre>
+  
+  Then we compile it with <i>csc.exe</i> into a DLL library:
+  <div class="cmd_console code"
+>...\projectfolder\>csc /t:library MyModule.cs
+Microsoft (R) Visual C# Compiler version 4.0.30319.33440
+for Microsoft (R) .Net Framework 4.5
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+...\projectfolder\>_</div>
+  This will output a library file <i>MyModule.dll</i> which can now be used by
+  F# programs.
+  
+  <br/><br/>
+  
+  Now we create an F# program that can use the DLL file, <i>main.fs</i>:
+  <pre><code class="fsharp code"
+>open MyModule
+
+printfn "%s" MyClass.x</code></pre>
+  
+  Compile with <i>fsc</i>:
+  <div class="cmd_console code"
+>...\projectfolder\>fsc -r:MyModule.dll main.fs
+Microsoft (R) F# Compiler version 12.0.21005.1
+Copyright (c) Microsoft Corporation. All Rights Reserved.
+
+...\projectfolder\>_</div>
+  This will output an executable <i>main.exe</i>. It will require
+  <i>MyModule.dll</i> to work.
+  
+  <br/><br/>
+  
+  Running <i>main.exe</i> produces following result:
+  <div class="cmd_console code"
+>...\projectfolder\>main.exe
+Whats up??!?
+
+...\projectfolder\>_</div>
+  
+  <script>$('pre code').each(function(i, block) {hljs.highlightBlock(block);});</script>
+</div>

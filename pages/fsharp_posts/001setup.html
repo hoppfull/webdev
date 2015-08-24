@@ -1,0 +1,47 @@
+<div>
+  <div class="page_fsharp_header">Setting up F# in windows</div>
+  
+  F# is included in an installation of .Net. Add an environment variable to path of the F# compiler.
+  For me this happen to be: "<i>C:\Program Files (x86)\Microsoft SDKs\F#\3.1\Framework\v4.0\</i>".
+  <br/><br/>
+  
+  We need access to <i>fsi.exe</i> and <i>fsc.exe</i>. <i>fsi.exe</i> gives us access to
+  the REPL and is used to run scripts which is great for experimenting while learning F#.
+  <i>fsc</i> is used to compile source files into .exe-files for distribution.
+  <br/><br/>
+  
+  Try running <i>fsi</i> and <i>fsc</i> in command console like this:
+  <div class="cmd_console code"
+>C:\> fsi
+
+Microsoft (R) F# Interactive version 12.0.21005.1
+Copyright (C) Microsoft Corporation. All Rights Reserved.
+
+For help type #help;;
+
+> _</div>
+  
+  <br/>
+  
+  You're in the REPL now. To exit type "<i>#quit;;</i>" and press enter:
+  <div class="cmd_console code"
+>> #quit;;
+
+C:\>_</div>
+  If you're seeing this then you're good to go. Else go use your Google-muscles.
+  
+  <br/><br/>
+  
+  Next let's see if the F#-compiler works like it should You should see this:
+  <div class="cmd_console code"
+>C:\>fsc
+Microsoft (R) F# Interactive version 12.0.21005.1
+Copyright (C) Microsoft Corporation. All Rights Reserved.
+
+<font color="red">error FS0207: No input specified</font>
+
+C:\>_</div>
+  Don't worry about the error. We didn't give the compiler any files to compile so all is good.
+  
+  
+</div>

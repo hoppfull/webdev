@@ -1,0 +1,46 @@
+<div>
+  <div class="page_fsharp_header">ex00 - Comments and printfn</div>
+  
+  Comments are blocks of text in our source files that will not be
+  evaluated at runtime by F#. We insert comments into our code to
+  explain with our own words what is going on.
+  <br/><br/>
+  
+  Ignore text in one line only (called single line comments):
+  <pre><code class="fsharp code"
+>//this is a single line comment!</code></pre>
+  
+  Ignore text between two points (called multi line comments):
+  <pre><code class="fsharp code"
+>(*this is a multi line comment!
+yay!*)</code></pre>
+  
+  <br/>
+  
+  <i>printfn</i> is the print function that returns output from your application to
+  the command console. Personally this function makes up 99% of debugging for me
+  when programming.
+  <br/><br/>
+  
+  <i>printfn</i> can only return output from a string directly. No numbers or not
+  even the string content in a variable. But there are tricks to get around that -
+  string formating.
+  
+  <pre><code class="fsharp code"
+>//This will output "hello" to the command console:
+printfn "hello"
+
+//This will not work:
+printfn 42
+printfn 3.14
+
+//Even the content of a variable will not work:
+let x = "whatsup"
+printfn x
+
+// To get around this we use string formating:
+printfn "%i" 42  //cmd console:42
+printfn "%d" 3.14  //cmd console:3.14
+printfn "%s" x  //cmd console:whatsup</code></pre>
+  
+</div>

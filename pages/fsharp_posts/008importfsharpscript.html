@@ -1,0 +1,30 @@
+<div>
+  <div class="page_fsharp_header">Import external file (F# script)</div>
+  
+  This in an example of how to load an F# script module from another F# script. This
+  is actually not recommendend. If code is too large to keep in one script file,
+  consider creating a source project.
+  <br/><br/>
+  
+  <i>mymodule.fsx</i>:
+   <pre><code class="fsharp code"
+>module whatevs
+
+let greeting = "whatsup"</code></pre>
+  
+  Now to load that module into main program <i>myprog.fsx</i>:
+   <pre><code class="fsharp code"
+>#load "mymodule.fsx"
+
+printfn "%s" whatevs.greeting</code></pre>
+
+  Run script with command console:
+  <div class="cmd_console code"
+>projectfolder\>fsi myprog.fsx
+whatsup
+
+projectfolder\>_</div>
+  
+  
+  <script>$('pre code').each(function(i, block) {hljs.highlightBlock(block);});</script>
+</div>

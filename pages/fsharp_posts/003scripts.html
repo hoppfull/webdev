@@ -1,0 +1,28 @@
+<div>
+  <div class="page_fsharp_header">F# scripts</div>
+  
+  Script files are also very good for learning and experimenting. But I'm sure there are
+  legitimate uses in projects for scripts. You don't have to compile scripts, you can just
+  run them straight away.
+  <br/><br/>
+  
+  Create a project folder somewhere. Inside your folder, create a text file and name it something
+  like <i>myscript.fsx</i>. Write some code in <i>myscript.fsx</i>:
+  
+  <pre><code class="fsharp code"
+>printfn "Hello World!"</code></pre>
+  
+  <br/>
+  
+  Navigate to your project directory in the command console <i>(hint: press shift + right
+  click the project folder and press "Open command window here")</i> and run the script
+  with <i>fsi</i>:
+  
+  <div class="cmd_console code"
+>...\projectfolder\>fsi myscript.fsx
+Hello World!
+
+...\projectfolder\>_</div>
+  
+  <script>$('pre code').each(function(i, block) {hljs.highlightBlock(block);});</script>
+</div>

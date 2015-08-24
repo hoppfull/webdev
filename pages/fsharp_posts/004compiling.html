@@ -1,0 +1,41 @@
+<div>
+  <div class="page_fsharp_header">Compiling source manually</div>
+  
+  I'm not going to bother explaining compiling source with an IDE since there's plenty
+  of info the webz.
+  <br/>
+  <br/>
+  
+  Create a project folder and inside it create a text file named something like
+  "<i>myprog.fs</i>".
+  <br/>Add some code:
+  
+  <pre><code class="fsharp code"
+>printfn "yo!"</code></pre>
+  
+  <br/>
+  
+  Open command console and navigate to your project folder and compile source with
+  <i>fsc</i>:
+  <div class="cmd_console code"
+>...\projectfolder\>fsc myprog.fs
+Microsoft (R) F# Interactive version 12.0.21005.1
+Copyright (C) Microsoft Corporation. All Rights Reserved.
+
+...\projectfolder\>_</div>
+  The compiler will have created an executable <i>myprog.exe</i> in project folder. You
+  should now in theory be able to distribute your program and run it on any computer
+  with .Net installed.
+  
+  <br/>
+  <br/>
+  Run your compiled program with the console in order to see its output:
+  
+  <div class="cmd_console code"
+>...\projectfolder\>myprog
+yo!
+
+...\projectfolder\>_</div>
+  
+  <script>$('pre code').each(function(i, block) {hljs.highlightBlock(block);});</script>
+</div>

@@ -1,0 +1,51 @@
+<div>
+  <div class="page_fsharp_header">ex08 - Active Patterns</div>
+  
+  Active patterns are defined patterns associated with names that can
+  be used in pattern matching. There are two types; total active
+  patterns and partial active patterns.
+  <br/><br/>
+  
+  Total active patterns are comprehensive and cover all cases. They are
+  defined thusly:
+  
+  <pre><code class="fsharp code"
+>// Define total active pattern keywords:
+let (|Positive|Negative|Zero|) item =
+  match item with
+  | x when x > 0 -> Positive
+  | x when x < 0 -> Negative
+  | _ -> Zero
+
+let f = function  // All pattern cases has to be covered
+  | Positive -> "It's positive!"
+  | Negative -> "It's negative!"
+  | Zero -> "It's zero!"
+
+printfn "%s" (f 0)  // cmd console:It's zero!
+printfn "%s" (f 1)  // cmd console:It's positive!
+printfn "%s" (f -1)  // cmd console:It's negative!
+</code></pre>
+  
+  Partial active patterns only associate keywords with some cases and
+  the rest with wildcard _:
+  
+  <pre><code class="fsharp code"
+>// Define a partial active pattern keyword:
+let (|Positive|_|) n =
+  if n > 0 then Some() else None
+
+// Define a partial active pattern keyword:
+let (|Negative|_|) n =
+  if n < 0 then Some() else None
+
+let f = function // Not all pattern cases has to be covered
+  | Positive -> "positive"
+  | _ -> "zero or not positive"
+
+printfn "%s" (f 0)  // cmd console:zero or not positive
+printfn "%s" (f 10)  // cmd console:positive
+printfn "%s" (f -1)  // cmd console:zero or not positive
+</code></pre>
+  
+</div>

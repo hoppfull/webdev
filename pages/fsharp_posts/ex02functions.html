@@ -1,0 +1,60 @@
+<div>
+  <div class="page_fsharp_header">ex02 - Functions</div>
+  
+  Functions in F# are <i>First Class</i> objects (as well as in many
+  imperative languages nowdays). Functions has to return a value. They
+  can even return other functions which is covered in
+  <i>ex07 - Closures</i>. F# does not enforce function purity like in
+  Haskell but you are encouraged to think functionally and work with
+  pure functions whenever possible.
+  <br/><br/>
+  
+  Defining and calling functions:
+  
+  <pre><code class="fsharp code"
+>// A function with one parameter (a function of arity 1):
+let f x = x * 2  // returns a value double that of the input
+
+// A function with three parameters (a function of arity 3):
+let g x y z = z * (x + y)
+
+// Call function (10 as input) and store return value in result:
+let result1 = f 10  // result1 = 20
+let result2 = g 2 3 5  // result2 = 25</code></pre>
+  
+  Functions can execute a series of instructions. In which case the
+  last statement evaluated is considered the return value of the
+  function:
+  
+  <pre><code class="fsharp code"
+>let myfunc x =
+  x * 3
+  x * 2
+
+let y = myfunc 2  // y = 4, cmd console:myfunc has been called!</code></pre>
+  </code></pre>
+  
+  Sometimes to avoid ambiguity we enclose a function call and its parameters
+  with parentheses:
+  <pre><code class="fsharp code"
+>let f x = x * 2
+
+// f 10 are enclosed with parentheses to avoid ambiguity:
+printfn "%i" (f 42)  // cmd console:84</code></pre>
+  
+  In the case of functions, infering types can be ambigous:
+  <pre><code class="fsharp code"
+>let f x y = x + y  // At this point, F# don't know the types
+// We could pass either ints or floats to f at this point.
+
+printfn "%i" (f 1 2) 
+// f has been determined to be of type (int -> int -> int)
+
+printfn "%f" (f 1.0 2.0)  // This will now produce an error</code></pre>
+  
+  We can explicitly define a function and its type:
+  <pre><code class="fsharp code"
+>let f (x: int) (y:int) = x + y
+// f is determined to be of type (int -> int -> int)</code></pre>
+  
+</div>

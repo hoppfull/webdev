@@ -3,9 +3,62 @@
 <html>
 <head>
 	<title>hoppfull</title><meta charset="UTF-8"/>
-	<link rel="stylesheet" href="css/index.css"/>
+  
+  <!-- Sitewide Common External Style Sheet: -->
+	<link rel="stylesheet" href="css/main.css"/>
+  <link rel="stylesheet" href="css/code-obsidian.css"/>
+  <!-- Sitewide Common JavaScript: -->
+  <script src="./js/code-highlight.js"></script>
+  <script src="./js/jquery-2.1.3-min.js"></script>
+  
+  <!-- Pagewide Common External Style Sheet: -->
+  <link rel="stylesheet" href="pages/page_fsharp.css"/>
+  <link rel="stylesheet" href="index.css"/>
+  <!-- Pagewide Common JavaScript:-->
+  <script src="pages/page_fsharp.js"></script>
+  <script src="pages/page_opengl.js"></script>
+  <script src="pages/page_python.js"></script>
+  <script src="pages/page_home.js"></script>
+  <script src="index.js"></script>
 </head>
 <body>
-	Hello worldzzch!
+
+<table id="webpage">
+  <tr><td id="header">
+  
+  
+  <h1>hoppfull</h1>
+  
+  
+  </td></tr>
+  <tr><td>
+  <table id="buttonbar">
+    <tr align="center">
+    <td><div class="button" onclick='load_page("page_home");'>Home</div></td>
+    <td><div class="button" onclick='load_page("page_fsharp");'>F#</div></td>
+    <td><div class="button" onclick='load_page("page_opengl");'>OpenGL</div></td>
+    <td><div class="button" onclick='load_page("page_python");'>Python</div></td>
+    </tr>
+  </table>
+  </td></tr>
+  <tr><td>
+  
+  
+  <div class="pages" id="page_home">home default page</div>
+  <div class="pages" id="page_fsharp">fsharp default page</div>
+  <div class="pages" id="page_opengl">opengl default page</div>
+  <div class="pages" id="page_python">python default page</div>
+  
+  
+  </td></tr>
+  <tr><td valign="bottom" id="footer">
+  
+  
+  hoppfull@gmail.com
+  
+  
+  </td></tr>
+</table>
+
 </body>
 </html>

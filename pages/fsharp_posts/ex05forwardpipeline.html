@@ -1,0 +1,37 @@
+<div>
+  <div class="page_fsharp_header">ex05 - Forward Pipe Operator</div>
+  
+  The forward pipeline operator is a binary infix operator - a
+  syntactic tool to make code easier to read. It's called "the most
+  important operator in F#".
+  <br/><br/>
+  
+  A trivial example:
+  <pre><code class="fsharp code"
+>let f x = x * 2
+
+// Forward pipeline operator: |>
+// 10 is fed as input to f:
+let result = 10 |> f  // result = 20</code></pre>
+  
+  <br/>
+  
+  It seems similair to the composition operator in
+  <i>ex04 - Composing Functions</i> but the difference is that the pipe
+  operator is a function call while the composition operator is a
+  function definition.
+  <pre><code class="fsharp code"
+>// without the forward pipe operator this becomes unintuitive:
+let result1 = ((fun x -> x + 100) ((fun x -> x - 2) ((fun x -> x * 2) 10)))
+
+// with the forward pipe operator this becomes much easier to read and understand:
+let result2 =
+  10  // take 10
+  |> (fun x -> x * 2)  // and then double
+  |> (fun x -> x - 2)  // and then subtract 2
+  |> (fun x -> x + 100)  // and then add 100
+  
+// result1 = result2
+</code></pre>
+  
+</div>
